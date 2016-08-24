@@ -1,0 +1,28 @@
+<ion-view view-title="LISTA DE PEDIDOS">
+
+<ion-content>
+
+<h1>Lista de Pedidos</h1>
+
+  	<div class="card" ng-show="pedidos.length == 0">
+			<div class="item item-text-wrap">
+		    No hay nada en la lista, agrega un productos a su pedido porfavor!!
+		  </div>
+		</div>
+
+<div class="list list-inset">
+      <label class="item item-input">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="text" placeholder="Search" ng-model="name.productos">
+      </label>
+    </div>
+    
+      <ion-item class="item-avatar item-icon-right" ng-repeat="producto in productos | filter: {name: name.productos}" type="item-text-wrap" href="#/app/productos/{{producto.name}}">
+        <img ng-src="{{producto.face}}">
+        <h2>{{producto.name}}</h2>
+        <p>{{producto.cantidad}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

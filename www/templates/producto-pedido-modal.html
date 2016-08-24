@@ -1,0 +1,62 @@
+<ion-modal-view>
+
+	<ion-header-bar class="bar-calm">
+		<h2 class="title">Pedido</h2>
+		<!--{{producto.name}} como titulo-->
+		<div class="buttons">
+			<button ng-click="closeModal()" class="button icon ion-close"></button>
+		</div>
+	</ion-header-bar>
+
+	<ion-content>
+
+		<div class="padding" ng-show="producto.face">
+				<img class="full-image" ng-src="{{ producto.face }}" style="width: 80px; height: 80px">
+			</div>
+
+		<form ng-submit="agregarPedido()">
+			
+			<div class="list">
+				
+				<label class="item item-input">
+					<span class="input-label">Nombre:</span>
+					<p>{{producto.name}}</p>
+				</label>
+
+				<label class="item item-input">
+					<span class="input-label">Cantidad:</span>
+					<p>{{producto.cantidad}}</p>
+				</label>
+
+				<label class="item item-input">
+					<span class="input-label">Precio:</span>
+					<p>{{producto.precio}}</p>
+				</label>
+			</div>
+
+			<button class= "buttons ">Haga su Reserva</button>
+
+			<div>
+
+  				 <label class="item item-input">
+   				 <span class="input-label">Cantidad</span>
+    			<input type="text">
+  				 </label>
+
+  				 <label class="item item-input">
+    			<span class="input-label">Precio Total:</span>
+    			{{producto.precio * cantidad}}
+    			<input type="Number">
+  				</label>
+
+  			</div>
+
+
+			
+			<div class="padding">
+				<button type="submit" class="button button-calm button-block">Hacer Pedido</button>
+			</div>
+
+		</form>
+	</ion-content>
+</ion-modal-view>

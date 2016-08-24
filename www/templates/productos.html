@@ -1,0 +1,27 @@
+<ion-view view-title ="PRODUCTOS">
+
+
+<ion-nav-buttons side="right">
+    <button ng-click="openModal()" class="button icon ion-plus"></button>
+  </ion-nav-buttons>
+
+<ion-content>
+
+<div class="list list-inset">
+      <label class="item item-input">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="text" placeholder="Buscar" ng-model="name.productos">
+      </label>
+    </div>
+
+<ion-list>
+    
+      <ion-item on-hold="showOptions( $index )" class="item-thumbnail-left" ng-repeat="producto in productos | filter: {name: name.productos}" type="item-text-wrap" href="#/app/productos/{{nombre.productos}}">
+        <img ng-src="{{producto.face}}" alt ="">
+        <h2>{{producto.name}}</h2>
+        <p>{{producto.cantidad}}</p>
+       
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
